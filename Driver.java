@@ -44,7 +44,6 @@ public class Driver
         player1.move(10, 0);
       }
 
-
   //Stops the mallets and puck from escaping the table, 
   //Limiting player one for the left secion and player 2 to the right 
 

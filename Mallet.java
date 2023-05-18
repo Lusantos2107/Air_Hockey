@@ -2,6 +2,11 @@ public class Mallet {
 
 
     private Ball mallet = new Ball(0, 0, 80, "RED", 2);
+    private double xcor;
+    private double ycor;
+    private double Xvelocity;
+    private double Yvelocity;
+
   
 
 	//sets the position of the mallets 
@@ -21,16 +26,44 @@ public class Mallet {
     public void addmallet(GameArena Arena)
     {
         Arena.addBall(mallet);
-
     }
-    //Returning the X and Y position of the mallets
+
+
+    //Returning the X and Y position of the Mallets
+    //Setting the X and Y cords of the Mallets
     public double getYPosition(){
-        return mallet.getYPosition();
-    }
-    public double getXPosition(){
-        return mallet.getXPosition();
+        return this.ycor;
     }
 
+    public void setYPosition(double ycord){
+        this.ycor = ycord;
+    }
+
+    public double getXPosition(){
+        return this.xcor;
+    }
+
+    public void setXPosition(double xcord){
+        this.xcor = xcord;
+    }
+
+    //Returning the X and Y velocity of the Mallets
+    //Setting the x and Y velocity of the Mallets
+    public void setXvelocity (double Xvelocity){
+        this.Xvelocity = Xvelocity;
+    }
+
+    public double getXvelocity (){
+        return this.Xvelocity;
+    }
+
+    public void setYvelocity (double Yvelocity){
+        this.Yvelocity = Yvelocity;
+    }
+
+    public double getYvelocity (){
+        return Yvelocity;
+    }
 
 
 
