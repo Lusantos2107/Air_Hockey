@@ -39,7 +39,7 @@ public class Puck {
    public void setXPosition (double xcord){
       this.xcor = xcord;
    }
-   
+
 
    //Returning the X and Y velocity of the Puck
    //Setting the x and Y velocity of the Puck
@@ -64,16 +64,17 @@ public class Puck {
 
  // The position and speed of each of the two balls in the x and y axis before collision.
   // YOU NEED TO FILL THESE VALUES IN AS APPROPRIATE...
+public double[] deflect(Mallet mallet){
 
-   double xPosition1; 
-   double yPosition1;
-   double xSpeed1 Mallet.getXvelocity;
-   double ySpeed1;
+   double xPosition1 = mallet.getXPosition(); 
+   double yPosition1 = mallet.getYvelocity();
+   double xSpeed1 = mallet.getXvelocity();
+   double ySpeed1 = mallet.getYvelocity();
 
-   double xPosition2; 
-   double yPosition2;
-   double xSpeed2;
-   double ySpeed2;
+   double xPosition2 = puck.getXPosition(); 
+   double yPosition2 = puck.getYPosition();
+   double xSpeed2 = Xvelocity;
+   double ySpeed2 = Yvelocity;
  
 
 

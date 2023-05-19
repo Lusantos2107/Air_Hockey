@@ -1,6 +1,5 @@
 public class Mallet {
 
-
     private Ball mallet = new Ball(0, 0, 80, "RED", 2);
     private double xcor;
     private double ycor;
@@ -15,14 +14,16 @@ public class Mallet {
         mallet.setXPosition(x + 250);
         mallet.setYPosition(y + 250);
 
-
     }
 	//Allows for the movement of the mallets 
     public void move(double dx, double dy)
 	{
-		mallet.move(dx, dy);
+		this.xcor += dx;
+        this.ycor += dy;
+        mallet.move(dx, dy);
     }
-	//Adds mallet (ball) to the GameArena
+	
+    //Adds mallet (ball) to the GameArena
     public void addmallet(GameArena Arena)
     {
         Arena.addBall(mallet);
