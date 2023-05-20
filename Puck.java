@@ -1,24 +1,32 @@
 public class Puck {
 
+   //instance variables for Puck
     private Ball puck = new Ball(0, 0, 30, "BLACK", 2);
-
     private double xcor;
     private double ycor;
     private double Xvelocity;
     private double Yvelocity;
 
     
+   //sets the position of the Puck
    public Puck(double x, double y)
 	 {
         puck.setXPosition(x + 500);
         puck.setYPosition(y + 250);
     }
 
-    //Adds puck (ball) to GameArena
+   //Adds puck (ball) to GameArena
    public void addpuck(GameArena Arena)
     {
         Arena.addBall(puck);
+    }
 
+   //Allows for the movement of the Puck
+   public void move(double dx, double dy)
+    {
+       //this.xcor += dx;
+         //this.ycor += dy;
+         puck.move(dx, dy);
     }
 
 
@@ -55,19 +63,28 @@ public class Puck {
       this.Yvelocity = Yvelocity;
    }
 
-   public double getYvelocity (){
+   public double getYvelocity (){   
       return this.Yvelocity;
    }
 
+   public boolean collidesCheck(Mallet mallet){
 
+      if (puck.collides(mallet.getMallet()) == true){
+         return true;
+      }
 
+      else{
+         return false;
+      }
+   }
 
+   
  // The position and speed of each of the two balls in the x and y axis before collision.
   // YOU NEED TO FILL THESE VALUES IN AS APPROPRIATE...
 public double[] deflect(Mallet mallet){
 
    double xPosition1 = mallet.getXPosition(); 
-   double yPosition1 = mallet.getYvelocity();
+   double yPosition1 = mallet.getYPosition();
    double xSpeed1 = mallet.getXvelocity();
    double ySpeed1 = mallet.getYvelocity();
 
@@ -117,22 +134,21 @@ public double[] deflect(Mallet mallet){
  */
  private double[] normalizeVector(double[] vec)
  {
- double mag = 0.0;
- int dimensions = vec.length;
- double[] result = new double[dimensions];
- for (int i=0; i < dimensions; i++)
- mag += vec[i] * vec[i];
- mag = Math.sqrt(mag);
+   double mag = 0.0;
+   int dimensions = vec.length;
+   double[] result = new double[dimensions];
+for (int i=0; i < dimensions; i++)
+   mag += vec[i] * vec[i];
+   mag = Math.sqrt(mag);
  if (mag == 0.0)
  {
- result[0] = 1.0;
+   result[0] = 1.0;
  for (int i=1; i < dimensions; i++)
  result[i] = 0.0;
  }
- else
- {
- for (int i=0; i < dimensions; i++)
- result[i] = vec[i] / mag;
+ else{
+   for (int i=0; i < dimensions; i++)
+   result[i] = vec[i] / mag;
  }
  return result;
 }

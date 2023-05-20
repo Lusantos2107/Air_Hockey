@@ -7,7 +7,6 @@ public class Mallet {
     private double Yvelocity;
 
   
-
 	//sets the position of the mallets 
     public Mallet(double x, double y)
 	{
@@ -15,6 +14,7 @@ public class Mallet {
         mallet.setYPosition(y + 250);
 
     }
+
 	//Allows for the movement of the mallets 
     public void move(double dx, double dy)
 	{
@@ -27,6 +27,10 @@ public class Mallet {
     public void addmallet(GameArena Arena)
     {
         Arena.addBall(mallet);
+    }
+
+    public Ball getMallet(){
+        return mallet;
     }
 
 
