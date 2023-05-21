@@ -1,20 +1,37 @@
-public class Mallet {
+/**
+ * This class provides the parameters and conditions for the physical movement
+ * and atributes for the Mallets in the game.
+ * @author Luis Santos
+ */
 
+
+public class Mallet {
+    //Instance variables for Mallet
     private Ball mallet = new Ball(0, 0, 80, "RED", 2);
     private double xcor;
     private double ycor;
     private double Xvelocity;
     private double Yvelocity;
 
-  
-	//sets the position of the mallets 
+
+    /**
+     * Sets the position of the mallets 
+     * 
+     * @param x The position in the X axis
+     * @param y The position in the Y axis
+     */
     public Mallet(double x, double y)
 	{
         mallet.setXPosition(x);
         mallet.setYPosition(y);
     }
 
-	//Allows for the movement of the mallets 
+    /**
+     * Allows for the movement of the mallets 
+     * 
+     * @param dx The movement in the X axis
+     * @param dy The movement in the Y axis
+     */
     public void move(double dx, double dy)
 	{
 		this.xcor += dx;
@@ -28,6 +45,7 @@ public class Mallet {
         Arena.addBall(mallet);
     }
 
+    //Allows for getMallet to be used in Puck class as mallet
     public Ball getMallet(){
         return mallet;
     }
@@ -37,12 +55,10 @@ public class Mallet {
     //Setting the X and Y cords of the Mallets
     public double getYPosition(){
         return this.ycor;
-
     }
-
+   
     public void setYPosition(double ycord){
-        //this.ycor = ycord;
-        mallet.setYPosition(ycord);
+        this.mallet.setYPosition(ycord);
     }
 
     public double getXPosition(){
@@ -50,12 +66,18 @@ public class Mallet {
     }
 
     public void setXPosition(double xcord){
-        //this.xcor = xcord;
-        mallet.setXPosition(xcord);
+        this.mallet.setXPosition(xcord);
     }
 
-    //Returning the X and Y velocity of the Mallets
-    //Setting the x and Y velocity of the Mallets
+    //
+
+    /**
+    * Returning the X and Y velocity of the Mallets
+    * Setting the x and Y velocity of the Mallets
+    *
+    * @param Xvelocity The current X velocity stored
+    * @param Yvelocity The current X velocity stored
+    */
     public void setXvelocity (double Xvelocity){
         this.Xvelocity = Xvelocity;
     }

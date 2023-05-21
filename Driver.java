@@ -1,13 +1,17 @@
+/**
+ * This class (Driver) connects to other classes used in the game and provides an active listener
+ * for when keys, collision activated and goal activation. 
+ * @author Luis Santos
+ */
+
+
 public class Driver
 {
   public static void main(String[] args)
   {
 
-    //instance variables for Driver
+    //Instance variables 
     double[] velocity = {0, 0};
-
-
-
     GameArena Arena = new GameArena (1200, 700);
     Table table = new Table(100, 100);
     Mallet player1 = new Mallet(350, 350);
@@ -112,18 +116,48 @@ public class Driver
       puck.move(velocity[0], velocity[1]);
 
       if (Arena.enterPressed()){
-        //player1.setXPosition(850);
-        //player1.setYPosition(350);
-        //player2.setXPosition(850);
-        //player2.setYPosition(850);
-        //puck.setXPosition(600);
-        //puck.setYPosition(350);
+        player1.setXPosition(350);
+        player1.setYPosition(350);
+        player2.setXPosition(850);
+        player2.setYPosition(350);
+        velocity[0] = 0;
+        velocity[1] = 0;
+        puck.setXPosition(600);
+        puck.setYPosition(350);
+        
+        // if (player1.getYPosition()<= -2200){
+        //   player1.move(0, 10);
+        //   System.out.println("yes");
+        // }
+        // if (player2.getYPosition()<= -2200){
+        //   player2.move(0, 10);
+        // }
+        // if (player1.getYPosition()>= 2200){
+        //   player1.move(0, -10);
+        // }
+        // if (player2.getYPosition()>= 2200){
+        //   player2.move(0, -10);
+        // }
+        // if (player1.getXPosition()<= -2200){
+        //   player1.move(10, 0);
+        // }
+        // if (player2.getXPosition()<= -2200){
+        //   player2.move(10, 0);
+        // }
+        // if (player1.getXPosition()>= 2200){
+        //   player1.move(-10, 0);
+        // }
+        // if (player2.getXPosition()>= 2200){
+        //   player2.move(-10, 0);
+        // }
+  
       }
 
 
-      if (puck.getXPosition() <= 121 && (puck.getYPosition() >= 200 && puck.getYPosition() <= 400)){
+      if (puck.getXPosition() >= 121 && (puck.getYPosition() >= 200 && puck.getYPosition() <= 400)){
         velocity[0] = 0;
         velocity[1] = 0;
+        System.out.println("in buttion");
 
         puck.setXPosition(600);
         puck.setYPosition(350);

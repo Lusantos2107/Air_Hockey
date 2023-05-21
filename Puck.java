@@ -1,14 +1,25 @@
+/**
+ * This class provides the parameters and conditions for the physical movement
+ * and atributes for the Puck in the game.
+ * @author Luis Santos
+ */
+
 public class Puck {
 
-   //instance variables for Puck
+   //Instance variables for Puck
     private Ball puck = new Ball(0, 0, 30, "RED", 2);
     private double xcor;
     private double ycor;
     private double Xvelocity;
     private double Yvelocity;
 
-    
-   //sets the position of the Puck
+ 
+    /**
+     * Sets the position of the Puck 
+     * 
+     * @param x The position in the X axis
+     * @param y The position in the Y axis
+     */
    public Puck(double x, double y)
 	 {
         puck.setXPosition(x);
@@ -21,7 +32,12 @@ public class Puck {
         Arena.addBall(puck);
     }
 
-   //Allows for the movement of the Puck
+   /**
+   * Allows for the movement of the Puck 
+   * 
+   * @param dx The movement in the X axis
+   * @param dy The movement in the Y axis
+   */
    public void move(double dx, double dy)
     {
          this.xcor += dx;
@@ -49,8 +65,13 @@ public class Puck {
    }
 
 
-   //Returning the X and Y velocity of the Puck
-   //Setting the x and Y velocity of the Puck
+   /**
+    * Returning the X and Y velocity of the Puck
+    * Setting the x and Y velocity of the Puck
+    *
+    * @param Xvelocity The current X velocity stored
+    * @param Yvelocity The current X velocity stored
+    */
    public void setXvelocity (double Xvelocity){
       this.Xvelocity = Xvelocity;
    }
@@ -67,6 +88,8 @@ public class Puck {
       return this.Yvelocity;
    }
 
+
+   //Boolean checker if mallet colldies with puck
    public boolean collidesCheck(Mallet mallet){
 
       if (puck.collides(mallet.getMallet()) == true){
@@ -79,10 +102,11 @@ public class Puck {
    }
 
    
- // The position and speed of each of the two balls in the x and y axis before collision.
-  // YOU NEED TO FILL THESE VALUES IN AS APPROPRIATE...
+// The position and speed of each of the two balls in the x and y axis before collision.
 public double[] deflect(Mallet mallet){
 
+
+   //Position1 being the Mallet and Position2 the Puck
    double xPosition1 = mallet.getXPosition(); 
    double yPosition1 = mallet.getYPosition();
    double xSpeed1 = mallet.getXvelocity();
@@ -92,8 +116,6 @@ public double[] deflect(Mallet mallet){
    double yPosition2 = puck.getYPosition();
    double xSpeed2 = Xvelocity;
    double ySpeed2 = Yvelocity;
- 
-
 
 
  // Calculate initial momentum of the balls... We assume unit mass here.
