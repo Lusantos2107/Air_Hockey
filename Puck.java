@@ -37,7 +37,7 @@ public class Puck {
    }
 
    public void setYPosition (double ycord){
-      this.ycor = ycord;
+      this.puck.setYPosition(ycord);
    }
 
    public double getXPosition(){
@@ -45,7 +45,7 @@ public class Puck {
    }   
     
    public void setXPosition (double xcord){
-      this.xcor = xcord;
+      this.puck.setXPosition(xcord);
    }
 
 
@@ -126,8 +126,7 @@ public double[] deflect(Mallet mallet){
     xSpeed2 = p2FinalTrajectory[0] * mag;
     ySpeed2 = p2FinalTrajectory[1] * mag;
 
-    double [] velocity = {xSpeed2 , ySpeed2};
-    return velocity;
+    return p1FinalTrajectory;
 
  //return p2FinalTrajectory;
  }

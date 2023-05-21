@@ -10,9 +10,8 @@ public class Mallet {
 	//sets the position of the mallets 
     public Mallet(double x, double y)
 	{
-        mallet.setXPosition(x + 250);
-        mallet.setYPosition(y + 250);
-
+        mallet.setXPosition(x);
+        mallet.setYPosition(y);
     }
 
 	//Allows for the movement of the mallets 
@@ -38,10 +37,12 @@ public class Mallet {
     //Setting the X and Y cords of the Mallets
     public double getYPosition(){
         return this.ycor;
+
     }
 
     public void setYPosition(double ycord){
-        this.ycor = ycord;
+        //this.ycor = ycord;
+        mallet.setYPosition(ycord);
     }
 
     public double getXPosition(){
@@ -49,7 +50,8 @@ public class Mallet {
     }
 
     public void setXPosition(double xcord){
-        this.xcor = xcord;
+        //this.xcor = xcord;
+        mallet.setXPosition(xcord);
     }
 
     //Returning the X and Y velocity of the Mallets
