@@ -12,7 +12,7 @@ public class Driver
     Table table = new Table(100, 100);
     Mallet player1 = new Mallet(100, 100);
     Mallet player2 = new Mallet(600, 100);
-    Puck puck = new Puck(100, 100);
+    Puck puck = new Puck(600, 350);
 
     //Content to add to the GameArena 
     table.addtable(Arena);
@@ -60,8 +60,7 @@ public class Driver
       }
 
   //Stops the mallets and puck from escaping the table, 
-  //Limiting player one for the left secion and player 2 to the right 
-
+  //Limiting player 1 for the left secion and player 2 to the right 
       if (player1.getYPosition()<= -220){
         player1.move(0, 10);
       }
@@ -88,16 +87,16 @@ public class Driver
         player2.move(-10, 0);
       }
 
-      if (puck.getXPosition()<= 200){
+      if (puck.getXPosition()<= -485){
         velocity[0] = velocity[0] * -1;
       }
-      if (puck.getXPosition()<= -200){
+      if (puck.getXPosition()>= 485){
         velocity[0] = velocity[0] * -1;
       }
-      if (puck.getYPosition()<= 200){
+      if (puck.getYPosition()<= -235){
         velocity[1] = velocity[1] * -1;
       }
-      if (puck.getYPosition()<= -200){
+      if (puck.getYPosition()>= 235){
         velocity[1] = velocity[1] * -1;
       }
 
@@ -105,11 +104,11 @@ public class Driver
       if (puck.collidesCheck(player1) == true){
         velocity = puck.deflect(player1);
         System.out.println(velocity[0] + velocity[1]);
-
       }
 
       if (puck.collidesCheck(player2) == true){
         velocity = puck.deflect(player2);
+        System.out.println(velocity[0] + velocity[1]);
       }
       
       puck.move(velocity[0], velocity[1]);

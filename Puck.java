@@ -1,7 +1,7 @@
 public class Puck {
 
    //instance variables for Puck
-    private Ball puck = new Ball(0, 0, 30, "BLACK", 2);
+    private Ball puck = new Ball(0, 0, 30, "RED", 2);
     private double xcor;
     private double ycor;
     private double Xvelocity;
@@ -11,8 +11,8 @@ public class Puck {
    //sets the position of the Puck
    public Puck(double x, double y)
 	 {
-        puck.setXPosition(x + 500);
-        puck.setYPosition(y + 250);
+        puck.setXPosition(x);
+        puck.setYPosition(y);
     }
 
    //Adds puck (ball) to GameArena
@@ -24,8 +24,8 @@ public class Puck {
    //Allows for the movement of the Puck
    public void move(double dx, double dy)
     {
-       //this.xcor += dx;
-         //this.ycor += dy;
+         this.xcor += dx;
+         this.ycor += dy;
          puck.move(dx, dy);
     }
 
@@ -126,7 +126,10 @@ public double[] deflect(Mallet mallet){
     xSpeed2 = p2FinalTrajectory[0] * mag;
     ySpeed2 = p2FinalTrajectory[1] * mag;
 
- return p2FinalTrajectory;
+    double [] velocity = {xSpeed2 , ySpeed2};
+    return velocity;
+
+ //return p2FinalTrajectory;
  }
  /**
  * Converts a vector into a unit vector.
