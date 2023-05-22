@@ -125,59 +125,34 @@ public class Driver
         puck.setXPosition(600);
         puck.setYPosition(350);
         
-        // if (player1.getYPosition()<= -2200){
-        //   player1.move(0, 10);
-        //   System.out.println("yes");
-        // }
-        // if (player2.getYPosition()<= -2200){
-        //   player2.move(0, 10);
-        // }
-        // if (player1.getYPosition()>= 2200){
-        //   player1.move(0, -10);
-        // }
-        // if (player2.getYPosition()>= 2200){
-        //   player2.move(0, -10);
-        // }
-        // if (player1.getXPosition()<= -2200){
-        //   player1.move(10, 0);
-        // }
-        // if (player2.getXPosition()<= -2200){
-        //   player2.move(10, 0);
-        // }
-        // if (player1.getXPosition()>= 2200){
-        //   player1.move(-10, 0);
-        // }
-        // if (player2.getXPosition()>= 2200){
-        //   player2.move(-10, 0);
-        // }
   
       }
 
+      // code for goal dictation
+      // if (puck.getXPosition() >= 121 && (puck.getYPosition() >= 200 && puck.getYPosition() <= 400)){
+      //   velocity[0] = 0;
+      //   velocity[1] = 0;
+      //   System.out.println("in buttion");
 
-      if (puck.getXPosition() >= 121 && (puck.getYPosition() >= 200 && puck.getYPosition() <= 400)){
-        velocity[0] = 0;
-        velocity[1] = 0;
-        System.out.println("in buttion");
-
-        puck.setXPosition(600);
-        puck.setYPosition(350);
+      //   puck.setXPosition(600);
+      //   puck.setYPosition(350);
         
-        player1.setXPosition(350);
-        player1.setYPosition(350);
+      //   player1.setXPosition(350);
+      //   player1.setYPosition(350);
         
-        player2.setXPosition(850);
-        player2.setYPosition(350);
-      }
+      //   player2.setXPosition(850);
+      //   player2.setYPosition(350);
+      // }
 
-/*      if (puck.getXPosition() >= 1100 && (puck.getYPosition() >= 200 && puck.getYPosition() <= 400)){
-        puck.setXPosition(600);
-        puck.setYPosition(350);
-        player1.setXPosition(850);
-        player1.setYPosition(350);
-        player2.setXPosition(850);
-        player2.setYPosition(850);
-      }
-*/ 
+      // if (puck.getXPosition() >= 1100 && (puck.getYPosition() >= 200 && puck.getYPosition() <= 400)){
+      //   puck.setXPosition(600);
+      //   puck.setYPosition(350);
+      //   player1.setXPosition(850);
+      //   player1.setYPosition(350);
+      //   player2.setXPosition(850);
+      //   player2.setYPosition(850);
+      // }
+ 
 
 
       //acts a buffer for 0.15 milliseconds to record the movements
